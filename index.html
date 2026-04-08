@@ -1,0 +1,1206 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Five Star Fashion & Beauty Collection | Portfolio</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: Georgia, serif;
+                scroll-behavior: smooth;
+            }
+            body {
+                background: rgb(85, 81, 77);
+            }
+
+            /* HEADER */
+            header {
+                position: fixed;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 20px;
+                z-index: 1000;
+            }
+            .angry {
+                display: flex;
+                background: rgba(12, 40, 181, 0.348);
+                border-radius: 20px 20px 20px 20px;
+                padding: 5px 10px;
+                justify-content: space-between;
+                align-items: center;
+                align-items: center;
+            }
+            .anon {
+                background-image: url("Boutique_icon.jpeg");
+                background-position: center;
+                background-size: cover;
+                border-radius: 50%;
+                height: 50px;
+                width: 50px;
+                margin-right: 7px;
+                margin-bottom: 8px;
+            }
+
+            /* MENU */
+            nav ul {
+                display: flex;
+                list-style: none;
+                gap: 20px;
+            }
+            nav ul li {
+                border-radius: 7px;
+                color: rgb(176, 185, 110);
+            }
+            nav ul li span {
+                font-weight: bolder;
+                font-size: 14px;
+                margin-right: 4px;
+            }
+            nav ul li a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+            }
+            nav ul li a:hover {
+                color: yellow;
+            }
+            .menu-toggle {
+                display: none;
+                cursor: pointer;
+            }
+
+            /* MOBILE */
+            @media (max-width: 768px) {
+                .menu-toggle {
+                    position: relative;
+                    font-size: 1px;
+                    display: block;
+                    height: 1px;
+                    z-index: 1002;
+                }
+                .anon {
+                    height: 30px;
+                    width: 30px;
+                    margin-bottom: 3px;
+                }
+
+                nav {
+                    nav {
+                        display: none;
+                        position: absolute;
+                        top: 300px; /* below header */
+                        left: 10px;
+                        width: 200px; /* enough for items */
+                        background: rgba(12, 40, 181, 0.5);
+                        backdrop-filter: blur(8px);
+                        border-radius: 10px;
+                        padding: 20px 0;
+                        z-index: 1001; /* above header */
+                    }
+                }
+                .angry {
+                    margin-top: 4px;
+                    display: flex;
+                    background: rgba(12, 40, 181, 0.348);
+                    border-radius: 30px 30px 30px 30px;
+                    backdrop-filter: blur(5px);
+                    padding: 5px 10px;
+                    align-items: center;
+                    width: 170px;
+                    height: 30px;
+                }
+                nav.show {
+                    display: block;
+                }
+                nav ul {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            } /* HEADER */
+            header {
+                position: fixed;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px 20px;
+                z-index: 1000;
+            }
+
+            .anon {
+                margin-top: 5px;
+            }
+            .anon img {
+                margin-right: 10px;
+                border-radius: 50%;
+            }
+
+            /* MENU */
+            nav ul {
+                display: flex;
+                list-style: none;
+                gap: 20px;
+            }
+            nav ul li {
+                border-radius: 7px;
+                color: rgb(176, 185, 110);
+            }
+
+            nav ul li a {
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+            }
+            nav ul li a:hover {
+                color: yellow;
+            }
+            .menu-toggle {
+                display: none;
+                font-size: 28px;
+                cursor: pointer;
+                margin-left: 15px;
+            }
+            menu-toggle p {
+                font-size: 14px;
+            }
+
+            /* MOBILE */
+            @media (max-width: 768px) {
+                .menu-toggle {
+                    display: block;
+                    border-radius: 50px;
+                    margin-bottom: 23px;
+                    font-weight: bolder;
+                }
+                .anon img {
+                    height: 19px;
+                    width: 19px;
+                }
+                nav {
+                    width: 50px;
+                    margin-top: 190px;
+                    display: none;
+                    width: 100px;
+                    background: rgba(12, 40, 181, 0.5);
+                    backdrop-filter: blur(8px);
+                    border-radius: 1px 1px 16px 16px;
+                    padding: 20px 0;
+                    z-index: 1;
+                }
+                nav.show {
+                    display: block;
+                }
+                nav ul {
+                    font-size: 14px;
+                    text-align: right;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                nav ul li {
+                    font-size: 12px;
+                }
+            }
+            /* HERO SECTION */
+            .hero {
+                width: 100%;
+                height: 100vh;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+            }
+
+            .hero video {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transform: translate(-50%, -50%);
+                z-index: -2;
+            }
+
+            .hero::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.4);
+                z-index: -1;
+            }
+
+            .slidetext {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                font-size: 2.5rem;
+                font-weight: bolder;
+                color: white;
+                text-align: center;
+            }
+
+            .left {
+                color: rgb(15, 57, 115);
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                transform: translateX(-200%);
+                animation: slideLeft 4s ease forwards;
+                margin-bottom: 19px;
+                text-shadow: 1px 2px 1px #fdf6e3;
+            }
+
+            .right {
+                color: red;
+                text-shadow: 1px 2px 1px #fdf6e3;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                transform: translateX(200%);
+                animation: slideRight 4s ease forwards;
+                animation-delay: 0.4s;
+            }
+
+            #top3 {
+                margin-left: 12px;
+                margin-top: 21px;
+            }
+
+            @keyframes slideLeft {
+                to {
+                    transform: translateX(0);
+                }
+            }
+
+            @keyframes slideRight {
+                to {
+                    transform: translateX(0);
+                }
+            }
+
+            .slidetext p {
+                margin: 0;
+                line-height: 1.2;
+            }
+
+            /* ABOUT ME SECTION */
+            #about {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                padding: 80px 20px;
+                background: rgb(51, 49, 40);
+                color: #fff;
+            }
+
+            #about .about-image {
+                flex: 1 1 300px;
+                max-width: 450px;
+                padding: 20px;
+            }
+
+            #about .about-image img {
+                width: 100%;
+                border-radius: 12px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            }
+
+            #about .about-text {
+                text-shadow: 1px 2px 1px rgb(4, 40, 90);
+                flex: 2 1 400px;
+                font-weight: bold;
+                color: #fdf6e3;
+                padding: 20px;
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+
+            #about .about-text h2 {
+                text-align: center;
+                font-size: 2rem;
+                text-shadow: 1px 2px 1px #fdf6e3;
+                margin-bottom: 5px;
+                color: rgb(0, 110, 206);
+            }
+            .about-text p {
+                margin-bottom: 15px;
+            }
+
+            #about .about-text p span {
+                text-decoration: underline;
+                color: rgb(255, 255, 255);
+                font-weight: bold;
+                font-size: 19px;
+            }
+
+            @media (max-width: 900px) {
+                #about {
+                    flex-direction: column;
+                }
+                #about .about-text,
+                #about .about-image {
+                    max-width: 100%;
+                }
+            }
+
+            /* SERVICE */
+            /* Service Section */
+            .service {
+                background: rgb(51, 49, 40);
+                color: #fff;
+                padding: 80px 20px;
+                font-family: Georgia, serif;
+            }
+
+            .service-container {
+                display: flex;
+                border-radius: 5px;
+                margin-top: 53px;
+                margin-bottom: 76px;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 40px;
+            }
+
+            /* Slider */
+            .service-slider {
+                position: relative;
+                width: 400px;
+                max-width: 90vw;
+                overflow: hidden;
+                border-radius: 12px;
+                box-shadow: 0 px 20px rgba(0, 0, 0, 0.5);
+            }
+
+            .service-slider .slides {
+                display: flex;
+                transition: transform 2s ease-in;
+                transition: transform 1s ease-out;
+            }
+
+            .service-slider img {
+                width: 100%;
+                flex-shrink: 0;
+                border-radius: 5px;
+            }
+
+            /* Slider Buttons */
+            .prev,
+            .next {
+                display: none;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(64, 64, 64, 0.348);
+                backdrop-filter: blur(2px);
+                color: #ffd700;
+                border: none;
+                font-size: 24px;
+                padding: 8px 12px;
+                cursor: pointer;
+                border-radius: 50%;
+                user-select: none;
+            }
+
+            .prev {
+                left: 10px;
+            }
+            .next {
+                right: 10px;
+            }
+
+            /* Text Content */
+            .service-text {
+                margin-top: 12px;
+                flex: 1 1 300px;
+                max-width: 400px;
+                color: #fdf6e3;
+                text-shadow: 1px 2px 1px rgb(4, 40, 90);
+            }
+
+            .service-text h3 {
+                text-align: center;
+                text-shadow: 2px 3px 2px rgba(72, 128, 234, 0.348);
+                font-size: 1.8rem;
+                color: #f9d342;
+                margin-bottom: 20px;
+            }
+
+            .service-text p,
+            .service-text ul {
+                text-align: left;
+                color: rgb(255, 255, 255);
+                font-weight: bold;
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .service-text ul {
+                padding-left: 20px;
+                list-style-type: decimal;
+            }
+
+            /* Responsive */
+            @media (max-width: 900px) {
+                .service-container {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .service-slider img {
+                    width: 100%;
+                    flex-shrink: 0;
+                    border-radius: 5px;
+                }
+
+                .service-slider,
+                .service-text {
+                    max-width: 90%;
+                }
+            }
+
+            .site-footer {
+                background: rgb(51, 49, 40);
+                color: #fff;
+                padding: 40px 25px;
+                padding-top: 80px;
+                font-family: Arial, sans-serif;
+                font-size: 15px;
+            }
+
+            .footer-inner {
+                display: flex;
+                justify-content: space-between;
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+
+            /* Columns */
+            .footer-col h4 {
+                color: #f9d342;
+                margin-bottom: 15px;
+                font-size: 18px;
+                text-transform: uppercase;
+            }
+
+            .footer-nav {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            .contact-list {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 23px;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-nav li,
+            .contact-list li {
+                margin-bottom: 10px;
+                list-style: none;
+            }
+
+            .footer-nav a,
+            .contact-list a {
+                cursor: pointer;
+                font-weight: bolder;
+                text-decoration: none;
+                list-style: none;
+                color: #ddd;
+                transition: 0.3s;
+            }
+
+            .footer-nav a:hover,
+            .contact-list a:hover {
+                color: #f9d342;
+                font-weight: bolder;
+                font-size: 18px;
+            }
+
+            /* Social icons */
+            .social-links {
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .social-links a img {
+                width: 40px;
+                height: 40px;
+                padding: 0;
+                border-radius: 50%;
+                background: none;
+                filter: none;
+                display: block;
+                transition:
+                    transform 0.3s,
+                    filter 0.3s;
+            }
+
+            .social-links a:hover img {
+                transform: scale(1.2);
+                filter: brightness(1.3);
+            }
+
+            /* Footer bottom */
+            .footer-bottom {
+                background: rgba(12, 40, 181, 0.348);
+                text-align: center;
+                padding: 10px 15px;
+                width: 100%;
+                font-weight: bolder;
+                border-top: 1px solid #333;
+                color: red;
+                font-size: 13px;
+            }
+
+            /* RESPONSIVE */
+            @media (max-width: 768px) {
+                .footer-inner {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .contact-list {
+                    margin-right: 17px;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 12px;
+                    justify-content: space-evenly;
+                    align-items: center;
+                }
+                .social-buttons {
+                    display: flex;
+                    gap: 15px;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            .footer-bottom {
+                background: rgba(12, 40, 181, 0.348);
+                text-align: center;
+                padding: 20px 25px;
+                font-size: 22px;
+                border-bottom: none;
+                box-shadow: 1px 0px 0px 1px rgb(59, 59, 27);
+                height: 80px;
+                width: 100%;
+                font-weight: bolder;
+                border-top: 1px solid #333;
+                color: red;
+                font-size: 13px;
+            }
+
+            /* Testimonies Section CSS */
+            #testimonies {
+                padding: 80px 20px;
+                background: rgb(51, 49, 40);
+                padding: 60px 20px;
+                font-family: Arial, sans-serif;
+            }
+
+            #testimonies .container {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            #testimonies .section-header {
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+            #testimonies .section-header h2 {
+                font-size: 32px;
+                text-shadow: 1px 2px 1px #fdf6e3;
+                color: rgb(0, 110, 206);
+                margin-bottom: 10px;
+            }
+
+            #testimonies .section-header p {
+                color: #f9d342;
+                margin-bottom: 15px;
+                font-size: 16px;
+                font-weight: bold;
+            }
+
+            #testimonies .testimony-cards {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+                justify-content: center;
+            }
+
+            #testimonies .card {
+                background: rgb(126, 156, 193);
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                max-width: 300px;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            #testimonies .card p {
+                font-size: 14px;
+                font-weight: bold;
+                color: #f9d342;
+                margin-bottom: 15px;
+            }
+
+            #testimonies .client-info {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            #testimonies .client-info img {
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+            }
+            #img1 {
+                background-image: url("client1.jpg");
+                border-radius: 50%;
+                background-size: contain;
+                background-position: top center;
+            }
+            #img2 {
+                background-image: url("client2.jpg");
+                border-radius: 50%;
+                background-size: cover;
+                background-position: center center;
+            }
+            #img3 {
+                border-radius: 50%;
+                background-image: url("client3.png");
+                background-size: contain;
+                background-position: center top;
+            }
+
+            #testimonies .client-info strong {
+                color: rgb(20, 44, 112);
+                text-shadow: 1px 2px 1px rgb(75, 77, 84);
+                display: block;
+            }
+
+            #testimonies .client-info span {
+                font-size: 11.3px;
+                color: white;
+                text-shadow: 0.2px 0.4px 0.2px rgb(0, 0, 0);
+            }
+
+            /* Responsive */
+            @media (max-width: 900px) {
+                #testimonies .testimony-cards {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+            /* Fix hero video for tall screens */
+            @media (min-height: 800px) {
+                .hero {
+                    height: 100vh;
+                }
+
+                .hero video {
+                    width: 100vw;
+                    height: 100vh;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+            .social-buttons {
+                display: flex;
+                gap: 15px;
+            }
+
+            .social-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px; /* button size */
+                height: 50px;
+                background-color: white;
+                border-radius: 50%;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                transition:
+                    transform 0.2s,
+                    box-shadow 0.2s;
+                text-decoration: none;
+            }
+
+            .social-btn img {
+                width: 24px; /* icon size */
+                height: 24px;
+            }
+
+            .social-btn:hover {
+                transform: scale(1.1);
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            .whatsapp img {
+                filter: invert(
+                    0.6
+                ); /* makes green logo visible on white background */
+            }
+            phone img {
+                width: 24px;
+                height: 24px;
+                filter: invert(0.6); /* makes icon visible on white button */
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="angry">
+                <a href="#hero" class="anon"></a>
+
+                <!-- Hamburger -->
+                <span
+                    class="menu-toggle"
+                    onclick="toggleMenu()"
+                    style="color: red; font-size: 18px"
+                    >☰
+                </span>
+
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#service">Services</a></li>
+                        <li><a href="#testimonies">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section id="hero" class="hero">
+            <video
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                poster="hero.jpg"
+                id="bgVideo"
+            >
+                <source src="bgvideo.mp4" type="video/mp4" />
+            </video>
+
+            <div class="slidetext">
+                <span class="left">
+                    <p id="top">Five</p>
+                    <p id="top1">Fashion &</p>
+                    <p id="top3">Col</p>
+                </span>
+                <span class="right">
+                    <p id="down">Star<sup>★</sup></p>
+                    <p id="down2">Beauty</p>
+                    <p id="down3">lection</p>
+                </span>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="about-image">
+                <img src="about-image (1).jpg" alt="about-image (1).jpg" />
+            </div>
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>
+                    At Five Star Fashion & Beauty Collection, we believe style
+                    is more than clothing—it’s an expression of who you are. Our
+                    curated collections blend
+                    <span>Elegance</span>, <span>Boldness</span>, and timeless
+                    <span>Sophistication</span>
+                    to empower you to shine in every moment.
+                </p>
+                <p>
+                    Founded with a passion for fashion and beauty, our mission
+                    is simple: to inspire confidence, style, and self-expression
+                    through fashion that tells your story.
+                </p>
+            </div>
+        </section>
+
+        <section id="service" class="service">
+            <h2
+                style="
+                    font-size: 32px;
+                    text-shadow: 1px 2px 1px #fdf6e3;
+                    color: rgb(0, 110, 206);
+                    text-align: center;
+                    margin-bottom: 10px;
+                "
+            >
+                We Offer
+            </h2>
+
+            <!-- Service 1 -->
+            <div class="service-container">
+                <div class="service-text">
+                    <h3>Jackets</h3>
+                    <p>
+                        <strong>Bold</strong> jackets with unique cuts,
+                        patterns, or colors that instantly draw attention.
+                    </p>
+                    <p><strong></strong></p>
+                    <ul>
+                        <li>Makes any outfit stand out</li>
+                        <li>Adds personality and confidence</li>
+                        <li>Works for casual or semi-formal events</li>
+                    </ul>
+                </div>
+                <div class="service-slider">
+                    <div class="slides">
+                        <img src="jacket1.jpeg" alt="Statement Jacket 1" />
+                        <img src="jacket2.jpg" alt="Statement Jacket 2" />
+                        <img src="jacket3.jpeg" alt="Statement Jacket 3" />
+                        <img src="jacket4.jpeg" alt="Statement Jacket 4" />
+                        <img src="jacket5.jpeg" alt="Statement Jacket 5" />
+                        <img src="jacket6.jpg" alt="Statement Jacket 6" />
+                    </div>
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-container">
+                <div class="service-text">
+                    <h3>Tailored Flair Suits</h3>
+                    <p>
+                        <strong>Slim-fit</strong> or uniquely styled suits with
+                        bold colors, patterns, or unconventional designs.
+                    </p>
+                    <p><strong></strong></p>
+                    <ul>
+                        <li>Perfect for making a statement at events</li>
+                        <li>Combines elegance with personal style</li>
+                        <li>Shows confidence and a fashion-forward mindset</li>
+                    </ul>
+                </div>
+                <div class="service-slider">
+                    <div class="slides">
+                        <img src="suit1.jpeg" alt="Tailored Flair Suit 1" />
+                        <img src="Suit2.jpeg" alt="Tailored Flair Suit 2" />
+                        <img src="suit3.jpg" alt="Tailored Flair Suit 3" />
+                        <img src="suit4.jpeg" alt="Tailored Flair Suit 4" />
+                        <img src="suit5.jpeg" alt="Tailored Flair Suit 5" />
+                    </div>
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-container">
+                <div class="service-text">
+                    <h3>Flowing Maxi Dresses</h3>
+                    <p>
+                        <strong>Description:</strong> Stylish long dresses
+                        crafted to give a smooth, elegant, and eye-catching
+                        appearance.
+                    </p>
+                    <p><strong></strong></p>
+                    <ul>
+                        <li>Creates a classy and sophisticated look</li>
+                        <li>Ideal for weddings, dinners, and formal outings</li>
+                        <li>Offers comfort while maintaining elegance</li>
+                    </ul>
+                </div>
+                <div class="service-slider">
+                    <div class="slides">
+                        <img src="gown1.jpeg" alt="Gown 1" />
+                        <img src="gown4.jpeg" alt="Gown 2" />
+                        <img src="gown3.jpeg" alt="Gown 3" />
+                        <img src="gown5.jpeg" alt="gown 4" />
+                        <img src="gown6.jpeg" alt="Gown 5" />
+                    </div>
+                    <button class="prev">&#10094;</button>
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+
+            <!-- Service 4  -->
+            <div class="service-container">
+                <div class="service-text">
+                    <h3>Patterned or T-shirts</h3>
+                    <p>
+                        <strong></strong> designed with bold colors, patterns,
+                        or unique materials to turn heads.
+                    </p>
+                    <p><strong></strong></p>
+                    <ul>
+                        <li>Complements casual or streetwear outfits</li>
+                        <li>Makes a statement without overdoing it</li>
+                        <li>Comfortable and stylish at the same time</li>
+                    </ul>
+                </div>
+                <div class="service-slider">
+                    <div class="slides">
+                        <img src="tees1.jpg" alt="Tees 1" />
+
+                        <img src="tees2.jpeg" alt="Tees 2" />
+
+                        <img src="tees3.jpeg" alt="Tees 3" />
+                        <img src="tees4.jpg" alt="Tees 4" />
+                        <img src="tees5.jpg" alt="Tees 5" />
+                        <img src="tees6.png" alt="Tees 6" />
+                    </div>
+
+                    <button class="prev">&#10094;</button>
+                    <!-- fixed << -->
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+            <!-- Service 5-->
+            <div class="service-container">
+                <div class="service-text">
+                    <h3>Eye-Catching Sneakers</h3>
+                    <p>
+                        <strong></strong> designed with bold colors, patterns,
+                        or unique materials to turn heads.
+                    </p>
+                    <p><strong></strong></p>
+                    <ul>
+                        <li>Complements casual or streetwear outfits</li>
+                        <li>Makes a statement without overdoing it</li>
+                        <li>Comfortable and stylish at the same time</li>
+                    </ul>
+                </div>
+                <div class="service-slider">
+                    <div class="slides">
+                        <img src="sneaker1.jpg" alt="sneaker 1" />
+
+                        <img src="sneaker2.jpg" alt="Sneaker 2" />
+
+                        <img src="sneaker3.jpeg" alt="sneaker 3" />
+                        <img src="sneaker4.jpeg" alt="sneaker 4" />
+                        <img src="sneaker5.jpg" alt="sneaker 5" />
+                    </div>
+
+                    <button class="prev">&#10094;</button>
+                    <!-- fixed << -->
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonies Section HTML -->
+        <section id="testimonies" class="testimonies">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What Our Clients Say</h2>
+                    <p>Real feedback from our happy customers</p>
+                </div>
+                <div class="testimony-cards">
+                    <div class="card">
+                        <p>
+                            “Their outfits are unique and high quality, I always
+                            find something I love."
+                        </p>
+                        <div class="client-info">
+                            <img id="img1" alt="" />
+                            <div>
+                                <strong>Raskarly Samira</strong>
+                                <span>Entrepreneur</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p>
+                            “A truly professional fashion and beauty center.
+                            Everything feels organized, classy, and high-end.”
+                        </p>
+                        <div class="client-info">
+                            <img id="img2" />
+                            <div>
+                                <strong> Jalila Muhammed</strong>
+                                <span>Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <p>
+                            "The atmosphere is so welcoming and professional I
+                            always feel comfortable"
+                        </p>
+                        <div class="client-info">
+                            <img id="img3" alt="" />
+                            <div>
+                                <strong> James Nkambi</strong>
+                                <span>Business Owner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="site-footer">
+            <div class="footer-inner">
+                <!-- LEFT: Navigation -->
+                <div class="footer-col nav-col">
+                    <h4>Navigation</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#hero">● Home</a></li>
+                        <li><a href="#about">● About</a></li>
+                        <li><a href="#service">● Services</a></li>
+                        <li><a href="#testimonies">● Testimonies</a></li>
+                        <li><a href="#contact">● Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- MIDDLE: Social Media -->
+                <div class="footer-col social-col">
+                    <h4>Follow Us On</h4>
+                    <div class="social-links">
+                        <a href="#"
+                            ><img
+                                src="https://img.icons8.com/ios-filled/50/ffffff/tiktok.png"
+                                alt="TikTok"
+                        /></a>
+                        <a href="#"
+                            ><img
+                                src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png"
+                                alt="Instagram"
+                        /></a>
+                        <a href="#"
+                            ><img
+                                src="https://img.icons8.com/ios-filled/50/ffffff/snapchat.png"
+                                alt="Snapchat"
+                        /></a>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Contact Info -->
+                <div class="footer-col contact-col">
+                    <h4>Contact Us on</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <div class="social-buttons">
+                                <a
+                                    href="https://wa.me/233555358325"
+                                    class="social-btn whatsapp"
+                                    target="_blank"
+                                >
+                                    <img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+                                        alt="WhatsApp"
+                                    />
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="social-buttons">
+                                <a
+                                    href="mailto:0555358325a@gmil.com"
+                                    class="social-btn email"
+                                >
+                                    <img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_%28iOS%29.svg"
+                                        alt="Email"
+                                    />
+                                </a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="social-buttons">
+                                <a
+                                    href="tel:+233555358325"
+                                    class="social-btn phone"
+                                >
+                                    <img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Phone_font_awesome.svg"
+                                        alt="Phone"
+                                    />
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <footer class="fot2">
+            <p class="footer-bottom">
+                © 2026 Five Star Fashion & Beauty Collection. All rights
+                reserved.
+            </p>
+        </footer>
+        <!-- Service Section JS -->
+        <script>
+            function toggleMenu() {
+                const nav = document.querySelector("nav");
+                nav.classList.toggle("show");
+            }
+
+            // Close menu when a link is clicked
+            const menuLinks = document.querySelectorAll("nav ul li a");
+            menuLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    document.querySelector("nav").classList.remove("show");
+                });
+            });
+
+            // Handle multiple sliders
+            const sliders = document.querySelectorAll(".service-slider");
+            sliders.forEach(slider => {
+                const slidesContainer = slider.querySelector(".slides");
+                const slides = slider.querySelectorAll("img");
+                const prev = slider.querySelector(".prev");
+                const next = slider.querySelector(".next");
+                let index = 0;
+
+                function showSlide(i) {
+                    if (i >= slides.length) index = 0;
+                    if (i < 0) index = slides.length - 1;
+                    slidesContainer.style.transform = `translateX(${-index * 100}%)`;
+                }
+
+                prev.addEventListener("click", () => {
+                    index--;
+                    showSlide(index);
+                });
+
+                next.addEventListener("click", () => {
+                    index++;
+                    showSlide(index);
+                });
+
+                // Optional auto-slide per slider
+                setInterval(() => {
+                    index++;
+                    showSlide(index);
+                }, 5000);
+            });
+
+            // Video speed
+            const video = document.getElementById("bgVideo");
+            video.playbackRate = 0.7;
+        </script>
+    </body>
+</html>
